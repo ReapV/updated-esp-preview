@@ -140,29 +140,29 @@ local ESPLoop = game:GetService("RunService").RenderStepped:Connect(function()
             if VisualTable  then
                 Box.Size = BoxSize
                 Box.Position = BoxPos
-                Box.Visible = true
+                Box.Visible = getgenv().Config.Visual.Box
                 Box.Color = Color3.fromRGB(255, 0, 0)
                 BoxOutline.Size = BoxSize
                 BoxOutline.Position = BoxPos
-                BoxOutline.Visible = true
+                BoxOutline.Visible = getgenv().Config.Visual.Box
             end
 
             if VisualTable  then
                 Health.From = Vector2.new((BoxPos.X - 5), BoxPos.Y + BoxSize.Y)
                 Health.To = Vector2.new(Health.From.X, Health.From.Y - (Humanoid.Health / Humanoid.MaxHealth) * BoxSize.Y)
                 Health.Color = Color3.fromRGB(0, 255, 0)
-                Health.Visible = true
+                Health.Visible = getgenv().Config.Visual.Health
 
                 HealthOutline.From = Vector2.new(Health.From.X, BoxPos.Y + BoxSize.Y + 1)
                 HealthOutline.To = Vector2.new(Health.From.X, (Health.From.Y - 1 * BoxSize.Y) -1)
-                HealthOutline.Visible = true
+                HealthOutline.Visible = getgenv().Config.Visual.Health
 
                 if VisualTable  then
                     Name.Text = (Player.Name)
                     Name.Position = Vector2.new(BoxSize.X / 2 + BoxPos.X, BoxPos.Y - 16)
                     Name.Color = Color3.fromRGB(255, 255, 255)
                     Name.Font = Drawing.Fonts.Plex
-                    Name.Visible = true
+                    Name.Visible = getgenv().Config.Visual.Name
                 end
 
             end
