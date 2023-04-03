@@ -140,29 +140,29 @@ local ESPLoop = game:GetService("RunService").RenderStepped:Connect(function()
             if VisualTable  then
                 Box.Size = BoxSize
                 Box.Position = BoxPos
-                Box.Visible = getgenv().Config.Visual.Box
-                Box.Color = getgenv().Config.Visual.BoxColor
+                Box.Visible = getgenv().ESP.Visual.Box
+                Box.Color = getgenv().ESP.Visual.BoxColor
                 BoxOutline.Size = BoxSize
                 BoxOutline.Position = BoxPos
-                BoxOutline.Visible = getgenv().Config.Visual.BoxOutline
+                BoxOutline.Visible = getgenv().ESP.Visual.BoxOutline
             end
 
             if VisualTable  then
                 Health.From = Vector2.new((BoxPos.X - 5), BoxPos.Y + BoxSize.Y)
                 Health.To = Vector2.new(Health.From.X, Health.From.Y - (Humanoid.Health / Humanoid.MaxHealth) * BoxSize.Y)
-                Health.Color = getgenv().Config.Visual.HealthColor
-                Health.Visible = getgenv().Config.Visual.Health
+                Health.Color = getgenv().ESP.Visual.HealthColor
+                Health.Visible = getgenv().ESP.Visual.Health
 
                 HealthOutline.From = Vector2.new(Health.From.X, BoxPos.Y + BoxSize.Y + 1)
                 HealthOutline.To = Vector2.new(Health.From.X, (Health.From.Y - 1 * BoxSize.Y) -1)
-                HealthOutline.Visible = getgenv().Config.Visual.HealthOutline
+                HealthOutline.Visible = getgenv().ESP.Visual.HealthOutline
 
                 if VisualTable  then
                     Name.Text = (Player.Name)
                     Name.Position = Vector2.new(BoxSize.X / 2 + BoxPos.X, BoxPos.Y - 16)
-                    Name.Color = getgenv().Config.Visual.NameColor
+                    Name.Color = getgenv().ESP.Visual.NameColor
                     Name.Font = Drawing.Fonts.Plex
-                    Name.Visible = getgenv().Config.Visual.Name
+                    Name.Visible = getgenv().ESP.Visual.Name
                 end
 
             end
